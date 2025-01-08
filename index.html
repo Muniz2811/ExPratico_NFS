@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de NFS-e</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Gerador de Nota Fiscal de Serviço Eletrônica (NFS-e)</h1>
+    </header>
+
+    <div class="container">
+        <div id="formContainer" class="form-container">
+            <div class="card">
+                <form id="nfseForm">
+                    <div class="form-group">
+                        <label>Valor Total da Venda</label>
+                        <input type="number" id="valorVenda" step="0.01" required placeholder="R$ 0,00">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Itens</label>
+                        <div id="itensContainer" class="items-container">
+                        </div>
+                        <button type="button" id="addItem">Adicionar Item</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label>IRPF (%)</label>
+                        <input type="number" id="irpf" step="0.01" required placeholder="0.00">
+                    </div>
+
+                    <div class="form-group">
+                        <label>PIS (%)</label>
+                        <input type="number" id="pis" step="0.01" required placeholder="0.00">
+                    </div>
+
+                    <div class="form-group">
+                        <label>COFINS (%)</label>
+                        <input type="number" id="cofins" step="0.01" required placeholder="0.00">
+                    </div>
+
+                    <div class="form-group">
+                        <label>INSS (%)</label>
+                        <input type="number" id="inss" step="0.01" required placeholder="0.00">
+                    </div>
+
+                    <div class="form-group">
+                        <label>ISSQN (%)</label>
+                        <input type="number" id="isson" step="0.01" required placeholder="0.00">
+                    </div>
+
+                    <button type="submit">Gerar Nota Fiscal</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="notaFiscal" class="card">
+            <div class="nota-header">
+                <h2>Nota Fiscal de Serviço Eletrônica</h2>
+            </div>
+            <div class="nota-content" id="notaFiscalConteudo"></div>
+            <div class="button-group">
+                <button id="novaNota" class="button-secondary">Nova Nota</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
